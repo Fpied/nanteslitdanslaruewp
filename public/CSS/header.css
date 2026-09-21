@@ -1,14 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
-
-:root {
-    --black: #000000;
-    --white: #FFFFFF;
-}
 .logo__header{
     height: 100px;
     width: auto;
@@ -23,46 +12,36 @@
 }
 .nav__header{
     display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 40%;
-    background: #F54927CC;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white);
     z-index: 1;
+    height: 100%;
 }
 
-:checked~.nav__header{
-    display: block;
-}
+
 
 .nav__header__ul{
+    padding-top: 4rem;
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: flex-end;
+    align-items: stretch;
 }
 .nav_link{
     text-decoration: none;
     color: --var(black);
+    padding: 1rem;
 }
 .image__header{
     height: auto;
-    max-height: 50vh;
+    max-height: 800px;
     max-width: 100%;
     width: 100%;
     object-fit: cover;
-}
-.footer{
-    display: flex;
-    justify-content: space-around;
-    
-}
-p{
-    display: inline-block;
-}
-.bulle{
-    text-align: right;
 }
 .envelope{ 
     font-size: 36px;
@@ -73,7 +52,34 @@ p{
 
 }
 .label__hamburger{
+    margin-left: 1rem;
+    order: -1;
+}
+.label__hamburger::before{
+    content: "☰";
+}
+.menu_hamburger_checkbox:checked+.label__hamburger::before{
+    content: "X";
+}
+.label__close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     font-size: 25px;
+    cursor: pointer;
+}
+.nav_link::after{
+    content: ">";
+}
+.nav_link{
+    display: flex;
+    justify-content: space-between;
+}
+@media(max-width: 769px){
+    :checked~.nav__header{
+        display: block;
+    }
+
 }
 
 @media(min-width: 770px) {
@@ -82,6 +88,7 @@ p{
         position: static;
         width: auto;
         background-color: var(--white);
+        height: auto;
     }
 
     .nav__header__ul{
@@ -90,10 +97,11 @@ p{
     .label__hamburger{
         display: none;
     }
+    .nav_link::after{
+        content: none;
+    }
+    .label__close{
+        display: none;
+    }
     
 }
-
-
-
-
-

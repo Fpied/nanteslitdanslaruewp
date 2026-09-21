@@ -1,0 +1,19 @@
+
+
+.footer{
+    display: flex;
+    justify-content: space-around;
+    
+}
+p{
+    display: inline-block;
+}
+.bulle{
+    text-align: right;
+}
+
+
+
+
+
+
