@@ -9,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    margin: 0 5%;
 
 }
 .nav__header{
@@ -76,6 +77,12 @@
 .nav_link{
     display: flex;
     justify-content: space-between;
+}
+@media (min-width: 770px) and (max-width: 1024px) {
+    .nav_link{
+        font-size: 24px;
+    }
+    
 }
 @media(max-width: 769px){
     :checked~.nav__header{

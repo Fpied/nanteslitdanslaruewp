@@ -1,14 +1,17 @@
 <?php get_header(); ?>
+
+<?php while (have_posts()) : the_post(); ?>
 <main class="main__home">
     <div class="hero">
-        <img src="<?php echo get_template_directory_uri(); ?>/asset/imagelectureenfant.jpeg" alt="image femme lit enfant" class="image__header">
+        <?php the_post_thumbnail('full', ['class' => 'image__header']); ?>
         <div class="transparencetitle">
-            <h1 class="title__home">Bibliothèques et ateliers de rue à Malakoff</h1>
+            <h1 class="title__home"><?php the_title(); ?></h1>
         </div>
-
     </div>
-    
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex commodi praesentium optio aliquid dolorum officiis dicta eligendi perferendis error omnis, ducimus quas voluptate, quaerat eaque voluptatum fugiat, excepturi amet ipsum?</p>
-    
+
+    <?php the_content(); ?>
+
 </main>
+<?php endwhile; ?>
+
 <?php get_footer(); ?>
