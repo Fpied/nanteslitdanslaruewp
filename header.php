@@ -17,12 +17,11 @@
         <label class="label__hamburger" for="votre_id" aria-label="Menu"></label>
             <nav class="nav__header">
                 <label for="votre_id" class="label__close" aria-label="Fermer">X</label>
-                <ul class="nav__header__ul">
-                    <li class="nav__ul__li"><a tabindex="0" class="nav_link" href="<?php echo get_permalink(get_page_by_path('qui-sommes-nous')); ?>">Qui sommes nous ?</a></li>
-                    <li class="nav__ul__li"><a tabindex="0" class="nav_link" href="<?php echo get_permalink(get_page_by_path('nos-actions')); ?>">Nos actions</a></li>
-                    <li class="nav__ul__li"><a tabindex="0" class="nav_link" href="<?php echo get_permalink(get_page_by_path('rejoignez-nous')); ?>">Rejoignez-nous</a></li>
-                    <li class="nav__ul__li"><a tabindex="0" class="nav_link envelope" href="<?php echo get_permalink(get_page_by_path('contact')); ?>">✉️</a></li>
-                </ul>
+                <?php wp_nav_menu([
+                    'theme_location' => 'principal',
+                    'container'      => false,
+                    'menu_class'     => 'nav__header__ul',
+                ]); ?>
             </nav>
     </header>
 

@@ -3,6 +3,7 @@
 function nlr_setup(){
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    register_nav_menus(['principal' => "Menu principal"]);
 
 }
 

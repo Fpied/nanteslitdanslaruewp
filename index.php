@@ -1,3 +1,13 @@
 <?php get_header(); ?>
-<p>Mon thème fonctionne</p>
+
+<?php if (have_posts()) : ?>
+    <?php while (have_posts()) : the_post(); ?>
+        <h1><?php the_title(); ?></h1>
+        <?php the_content(); ?>
+    <?php endwhile; ?>
+<?php else : ?>
+    <h1>Page introuvable</h1>
+    <p>Cette page n'existe pas.</p>
+<?php endif; ?>
+
 <?php get_footer(); ?>
