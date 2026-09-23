@@ -1,4 +1,5 @@
 .logo__header{
+    margin: 20px;
     height: 100px;
     width: auto;
 }
@@ -24,24 +25,25 @@
 
 
 .nav__header__ul{
-    padding-top: 4rem;
+    padding-top: 5rem;
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1px;
     align-items: stretch;
 }
 .nav_link{
     text-decoration: none;
     color: --var(black);
-    padding: 1rem;
+    padding: 0.5rem;
 }
 .image__header{
     height: auto;
-    max-height: 800px;
+    max-height: 600px;
     max-width: 100%;
     width: 100%;
     object-fit: cover;
+    filter: brightness(0.5);
 }
 .envelope{ 
     font-size: 36px;
@@ -102,6 +104,9 @@
     }
     .label__close{
         display: none;
+    }
+    .nav__header__ul{
+        padding-top: 0;
     }
     
 }
