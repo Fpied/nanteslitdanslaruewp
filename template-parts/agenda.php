@@ -18,6 +18,8 @@ if ($evenements->have_posts()) : ?>
     <h2 class="agenda__titre">L'agenda</h2>
     <?php while ($evenements->have_posts()) : $evenements->the_post();
         $timestamp = strtotime(get_post_meta(get_the_ID(), 'date_evenement', true));
+        $debut = get_post_meta(get_the_ID(), 'heure_debut', true);
+        $fin   = get_post_meta(get_the_ID(), 'heure_fin', true);
     ?>
         <article class="agenda__item">
             <div class="agenda__date">
@@ -25,7 +27,14 @@ if ($evenements->have_posts()) : ?>
                 <span class="agenda__num"><?php echo esc_html(date_i18n('d', $timestamp)); ?></span>
                 <span class="agenda__mois"><?php echo esc_html(date_i18n('F', $timestamp)); ?></span>
             </div>
-            <a class="agenda__lien" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            <div class="agenda__infos">
+                <a class="agenda__lien" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                <?php if ($debut) : ?>
+                    <span class="agenda__heure">
+                        ⏱ <?php echo esc_html($debut); ?><?php if ($fin) : ?> - <?php echo esc_html($fin); ?><?php endif; ?>
+                    </span>
+                <?php endif; ?>
+            </div>
         </article>
     <?php endwhile; wp_reset_postdata(); ?>
 </section>

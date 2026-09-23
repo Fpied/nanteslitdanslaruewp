@@ -47,10 +47,20 @@ add_action('add_meta_boxes', 'nlr_date_box');
 
 function nlr_date_box_html($post){
     $date = get_post_meta($post->ID, 'date_evenement', true);
+    $debut = get_post_meta($post->ID, 'heure_debut', true);
+    $fin   = get_post_meta($post->ID, 'heure_fin', true);
     ?>
     <?php wp_nonce_field('nlr_date_save', 'nlr_date_nonce'); ?>
     <label for="date_evenement">Date :</label>
     <input type="date" id="date_evenement" name="date_evenement" value="<?php echo esc_attr($date); ?>">
+    <p>
+    <label for="heure_debut">Début :</label>
+    <input type="time" id="heure_debut" name="heure_debut" value="<?php echo esc_attr($debut); ?>">
+    </p>
+    <p>
+        <label for="heure_fin">Fin :</label>
+        <input type="time" id="heure_fin" name="heure_fin" value="<?php echo esc_attr($fin); ?>">
+    </p>
     <?php
 }
 
@@ -70,6 +80,12 @@ function nlr_date_save($post_id){
     // tout est bon : on enregistre la date, nettoyée
     if (isset($_POST['date_evenement'])) {
         update_post_meta($post_id, 'date_evenement', sanitize_text_field($_POST['date_evenement']));
+    }
+    if (isset($_POST['heure_debut'])) {
+        update_post_meta($post_id, 'heure_debut', sanitize_text_field($_POST['heure_debut']));
+    }
+    if (isset($_POST['heure_fin'])) {
+        update_post_meta($post_id, 'heure_fin', sanitize_text_field($_POST['heure_fin']));
     }
 }
 
