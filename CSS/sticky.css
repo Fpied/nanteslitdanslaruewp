@@ -1,0 +1,34 @@
+.barre__bas{
+    display: flex;
+    position: sticky;
+    bottom: 1rem;
+    width: fit-content;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: 0;
+    height: 50px;
+    margin-top: -50px;
+}
+.barre__bas img{
+    width: 40px;
+}
+
+.chevron__haut{
+    background-color: #222;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chevron__haut img{
+    width: 16px;
+    filter: invert(1);
+}
+
+.chevron__haut--cache{
+    opacity: 0;
+    pointer-events: none;
+}

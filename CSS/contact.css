@@ -1,18 +1,11 @@
-*{
-    text-align: center;
-}
 .title__contact{
     margin: 50px;
-    font-size: 56px;
 }
 
 .paragraphe{
-    margin: 0 auto;
-    width: 80%;
     padding-bottom: 50px;
-    font-size: 12px;
-}
-.paragraphe__contact{
-    font-size: 28px;
 }
 
+iframe{
+    margin: 0 auto;
+}

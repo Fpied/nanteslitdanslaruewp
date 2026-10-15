@@ -1,0 +1,5 @@
+.wp-block-video.is-style-encadree video,
+.wp-block-embed.is-style-encadree iframe {
+    border-radius: var(--ombre-arrondi, 20px);
+    box-shadow: var(--ombre-taille, 15px) var(--ombre-taille, 15px) 0 var(--ombre-couleur, var(--bleu));
+}

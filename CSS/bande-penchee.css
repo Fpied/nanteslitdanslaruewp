@@ -1,0 +1,25 @@
+.is-style-fond-penche{
+    position: relative;
+    margin-block: 8.76vw;
+}
+
+.is-style-fond-penche::before, .is-style-fond-penche::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 3826 / 335;
+    background: inherit;
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+}
+
+.is-style-fond-penche::before{
+    bottom: calc(100% - 1px);
+    mask-image: url("../asset/svg/biais-haut.svg");
+}
+
+.is-style-fond-penche::after{
+    top: calc(100% - 1px);
+    mask-image: url("../asset/svg/biais-bas.svg");
+}

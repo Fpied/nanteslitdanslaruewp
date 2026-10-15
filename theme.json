@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "settings": {
+        "color": {
+            "duotone": [
+                {
+                    "name": "Soleil",
+                    "slug": "soleil",
+                    "colors": [ "#5a1e0a", "#ffd23f" ]
+                },
+                {
+                    "name": "saumon",
+                    "slug": "saumon",
+                    "colors": [ "#4a1a14", "#ffe3d6" ]
+                },
+                {
+                    "name": "filtrerougenldlr",
+                    "slug": "filtrerougenldlr",
+                    "colors": [ "#FB725F", "#FFFFFF" ]
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "800px",
+            "wideSize": "1200px"
+        }
+    }
+}
+

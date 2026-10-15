@@ -1,0 +1,84 @@
+.wp-block-gallery.has-nested-images.menu-actions figure.wp-block-image {
+    position: relative;
+    background-color: var(--ronds-actions);
+}
+
+.wp-block-gallery.has-nested-images.menu-actions figure.wp-block-image img{
+    mix-blend-mode: multiply;
+}
+
+.wp-block-gallery.has-nested-images.menu-actions figure.wp-block-image figcaption {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: none;
+    margin: 0;
+    padding: 1rem;
+    color: var(--texte-actions);
+    font-weight: 700;
+    text-align: center;
+    pointer-events: none;
+    font-size: clamp(1rem, 3.2vw, 2rem);
+    z-index: 1;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.fond-actions{
+    position: relative;
+    padding-block: 4rem;
+    background-color: var(--ronds-actions) !important;
+}
+
+.fond-actions::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--voile-couleur);
+    opacity: var(--voile-actions);
+    pointer-events: none;
+    
+}
+.fond-actions.menu-actions.rejoignez-nous{
+    --ronds-actions: var(--couleur-rejoignez);
+}
+
+.menu-actions .wp-block-image{
+    transition: transform 0.5s ease;
+}
+
+.menu-actions .wp-block-image:hover{
+    transform: scale(1.50);
+}
+.menu-actions {
+    --wp--style--gallery-gap-default: 6rem;
+}
+.menu-actions.rejoignez-nous{
+    max-width: 1200px;
+
+    --wp--style--gallery-gap-default: 1rem;
+    --ronds-actions: var(--couleur-rejoignez);
+}
+
+.fond-actions.rejoignez-nous {
+    --ronds-actions: var(--couleur-rejoignez);
+    background-color: var(--fond-rejoignez, var(--couleur-rejoignez)) !important;
+}
+
+.wp-block-gallery.has-nested-images.menu-actions.rejoignez-nous figure.wp-block-image {
+    border-radius: 50%;
+}
+
+.menu-actions.rejoignez-nous .wp-block-image:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px){
+    .wp-block-gallery.has-nested-images.menu-actions{
+        flex-direction: column;
+        align-items: center;
+        --wp--style--gallery-gap-default: 2rem;
+    }
+}

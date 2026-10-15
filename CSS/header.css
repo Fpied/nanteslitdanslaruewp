@@ -1,19 +1,29 @@
 .logo__header{
     margin: 20px;
-    height: 100px;
+    height: auto;
     width: auto;
+    max-width: min(calc(180px * var(--logo-size)), 50vw);
 }
 .header{
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    margin: 0 5%;
+    position: sticky;
+    top: 0;
+    padding: 0 5%;
+    background: var(--white);
+    z-index: 10;
+    transition: transform 0.3s ease;
 
 }
+.header.header-cache{
+    transform: translateY(-100%);
+}
+
 .nav__header{
-    display: none;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,29 +36,23 @@
 
 
 .nav__header__ul{
-    padding-top: 5rem;
+    padding-top: 8rem;
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 1.5rem;
     align-items: stretch;
 }
-.nav__header__ul a{
-    text-decoration: none;
-    color: --var(black);
-    padding: 0.5rem;
-}
+
 .image__header{
-    height: auto;
-    max-height: 600px;
+    height: 70vh;
+    max-height: 100%;
     max-width: 100%;
     width: 100%;
     object-fit: cover;
-    filter: brightness(0.5);
+    object-position: center ;
 }
-.envelope a{ 
-    font-size: 36px;
-}
+
 .menu_hamburger_checkbox{
     position: absolute;
     opacity: 0;
@@ -60,16 +64,19 @@
 }
 .label__hamburger::before{
     content: "☰";
+    font-size: 3rem;
 }
 .menu_hamburger_checkbox:checked+.label__hamburger::before{
     content: "X";
+    font-size: 2rem;
+    font-weight: bold;
 }
 .label__close{
     position: absolute;
-    top: 1rem;
+    top: 4rem;
     right: 1rem;
-    font-size: 25px;
     cursor: pointer;
+    font-size: 2rem;
 }
 .nav__header__ul a::after{
     content: ">";
@@ -77,43 +84,88 @@
 .nav__header__ul a{
     display: flex;
     justify-content: space-between;
+    text-decoration: none;
+    color: var(--black);
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: calc(1.5rem * var(--font-size-menu));
 }
-@media (min-width: 770px) and (max-width: 1024px) {
-    .nav__header__ul a{
-        font-size: 24px;
-    }
-    
-}
-@media(max-width: 769px){
-    :checked~.nav__header{
-        display: block;
-    }
-
+.nav__header__ul a:hover{
+    text-decoration: underline;
 }
 
-@media(min-width: 770px) {
+:checked~.nav__header{
+        transform: translateX(0);
+    }
+
+
+#haut.header{
+    margin: 0;
+}
+
+@media(min-width: 1120px) {
+    .logo__header{
+        max-width: min(calc(180px * var(--logo-size)), 16vw);
+    }
     .nav__header{
         display: flex;
         position: static;
         width: auto;
         background-color: var(--white);
         height: auto;
+        transform: none;
+        align-items: center;
     }
 
     .nav__header__ul{
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.25rem clamp(0.5rem, 1.2vw, 1.7rem);
+        align-items: center;
     }
     .label__hamburger{
         display: none;
     }
-    .nav__header__ul a::after{
-        content: none;
+
+    .nav__header__ul a{
+        position: relative;
+        white-space: nowrap;
+        font-size: clamp(calc(1rem * var(--font-size-menu)), calc(1.6vw * var(--font-size-menu)), calc(1.5rem * var(--font-size-menu)));
+
     }
+    .nav__header__ul a:hover{
+        text-decoration: none;
+    }
+    .nav__header__ul a::after{
+        content: "";
+        position: absolute;
+        left: 0.5rem;
+        right: 0.5rem;
+        bottom: 3px;
+        height: 3px;
+        background: var(--black);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s;
+    }
+
+    .nav__header__ul a:hover::after{
+        transform: scaleX(1);
+        
+    }
+
+
     .label__close{
         display: none;
     }
     .nav__header__ul{
         padding-top: 0;
+    }
+
+    .image__header{
+        height: 70vh;
+        max-height: none;
     }
     
 }

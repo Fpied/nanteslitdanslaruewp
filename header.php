@@ -9,10 +9,14 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <header class="header">
-    <a href="<?php echo home_url('/'); ?>">
-        <img src="<?php echo get_template_directory_uri(); ?>/asset/LogoNLDLR-01.png" alt="Logo Nantes Lit dans la rue" class="logo__header">
-    </a>
+    <header class="header" id="haut">
+    <?php if (has_custom_logo()) : ?>
+    <?php the_custom_logo(); ?>
+    <?php else : ?>
+        <a href="<?php echo home_url('/'); ?>">
+            <img src="<?php echo get_template_directory_uri(); ?>/asset/LogoNLDLR-01.png" alt="Logo Nantes Lit dans la rue" class="logo__header">
+        </a>
+    <?php endif; ?>
         <input class="menu_hamburger_checkbox" type="checkbox" id="votre_id" tabindex="0">
         <label class="label__hamburger" for="votre_id" aria-label="Menu"></label>
             <nav class="nav__header">
@@ -22,6 +26,7 @@
                     'container'      => false,
                     'menu_class'     => 'nav__header__ul',
                 ]); ?>
+                
             </nav>
     </header>
 

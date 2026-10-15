@@ -1,0 +1,43 @@
+.resources{
+    display: grid;
+    gap: 1rem;
+}
+.title_benevole{
+    text-align: center;
+    font-weight: bold;
+    margin: 2rem;
+}
+.title_section{
+    text-align: center;
+    font-weight: bold;
+    margin: 1rem;
+}
+.resources__box{
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+.resources__box ul{
+    /* list-style: none; */
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.resources__box li{
+    margin: 0.5rem 0;
+}
+.button_deconnexion__benevole{
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+@media (min-width: 768px) {
+    .resources{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .contenu__page--wide{
+        max-width: 75rem;
+    }
+}

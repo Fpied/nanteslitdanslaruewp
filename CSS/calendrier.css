@@ -1,0 +1,96 @@
+.calendrier {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+
+    text-align: left;
+    background: #ebe7dc;
+
+    border: 2px solid #aaa397;
+    border-radius: 5px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12),
+    inset 0 0 20px rgba(120, 105, 80, 0.04);
+
+}
+
+.calendrier__grille {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+
+    border-top: 1px solid #c9c6bc;
+    border-left: 1px solid #c9c6bc;
+}
+
+.calendrier__entete,
+.calendrier__vide,
+.calendrier__jour {
+    border-right: 1px solid #9f9a90;
+    border-bottom: 1px solid #9f9a90;
+}
+
+.calendrier__entete {
+    padding: 0.4rem;
+    font-family: "Public Sans", sans-serif;
+    font-weight: normal;
+    text-align: center;
+}
+
+.calendrier__jour {
+    min-height: 115px;
+    padding: 0.35rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    /* LEs lignes d'écriture de l'agenda */
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 22px,
+            #cbc6ba 22px,
+            #cbc6ba 23px
+        );
+}
+
+.calendrier__num{
+    font-family: "Public Sans", sans-serif;
+    font-size: 0.9rem;
+
+    /* évite qu'une ligne traverse le numéro */
+    background: #F5F3EC;
+    padding-right: 4px;
+}
+
+.calendrier__evenement {
+    color: #fff;
+    background: #333;
+    padding: 0.1rem 0.3rem;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.calendrier__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.calendrier__evenement--biblio    { background: #d62828; }
+.calendrier__evenement--activite  { background: #2a9d4b; }
+.calendrier__evenement--evenement { background: #1d4ed8; }
+
+@media (max-width: 600px) {
+    .calendrier {
+        padding: 0 0.25rem;
+    }
+    .calendrier__jour {
+        min-height: 60px;
+        padding: 0.1rem;
+    }
+    .calendrier__evenement {
+        padding: 0.1rem;
+    }
+}

@@ -3,9 +3,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 24px;
     font-family: "Public Sans", sans-serif;
 
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: clip;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.main__page{
+    flex: 1;
 }
 
 :root {
@@ -14,4 +26,22 @@
     --rouge: #FB725F;
     --bleu: #659FCC;
     --vert: #5AB74F;
+}
+
+
+
+p, li{
+    font-size: calc(1.25rem * var(--font-size-p));
+}
+
+h1{
+    font-size: clamp(calc(var(--taille-h1-mobile) * 1px), 5vw, calc(var(--taille-h1) * 1px));
+}
+
+h2{
+    font-size: calc(2rem * var(--font-size-h2));
+}
+
+h3{
+    font-size: calc(1.5rem * var(--font-size-h3));
 }

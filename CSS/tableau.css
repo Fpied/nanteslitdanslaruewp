@@ -1,0 +1,27 @@
+/* Le tableau entier : c'est lui qui porte le fond et les coins arrondis */
+.tableau-missions table {
+  border-collapse: separate;   /* sinon border-radius est ignoré */
+  border-spacing: 0;           /* supprime l'espace entre cases que crée "separate" */
+  background-color: var(--couleur-tableau-missions, #7f3300);
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 20px;
+}
+
+/* Les cases */
+.tableau-missions td {
+  border: none;                /* retire les bordures par défaut de WordPress */
+  border-right: 2px solid #000;/* séparateur vertical */
+  padding: 1rem;
+  overflow-wrap: anywhere;     /* coupe le texte long au lieu de déborder sur mobile */
+}
+
+/* Pas de séparateur après la dernière case de chaque ligne */
+.tableau-missions td:last-child {
+  border-right: none;
+}
+
+/* Trait entre les bandeaux, sauf sous le dernier */
+.tableau-missions tr:not(:last-child) td {
+  border-bottom: 2px solid #000;
+}
