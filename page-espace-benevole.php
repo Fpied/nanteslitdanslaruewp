@@ -54,7 +54,7 @@
                     </section>
                 <?php endforeach; ?>
             </div>
-            <a class="button_deconnexion__benevole" href="<?php echo esc_url(wp_logout_url(get_permalink())); ?>">Se déconnecter</a>
+            <a class="button_deconnexion__benevole" href="<?php echo esc_url(wp_logout_url(get_permalink())); ?>">Se déconnecter <img src="<?php echo esc_url(get_template_directory_uri() . '/asset/iconedeconnexion.svg'); ?>" alt="" width="32" height="32"></a>
         <?php else : ?>
             <?php wp_login_form(['label_username' => 'Nom d\'utilisateur']); ?>
         <?php endif; ?>

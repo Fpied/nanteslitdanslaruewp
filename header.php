@@ -28,5 +28,20 @@
                 ]); ?>
                 
             </nav>
+            
     </header>
+
+    <?php if (is_page() && get_theme_mod('nlr_banniere_' . get_queried_object_id() . '_chantier', false)) : ?>
+            <div class="chantier" role="note" aria-label="Page en chantier">
+                <div class="chantier__defile" aria-hidden="true">
+                    <?php for ($i = 0; $i < 2; $i++) : ?>
+                        <div class="chantier__groupe">
+                            <?php for ($j = 0; $j < 6; $j++) : ?>
+                                <span>Page en chantier</span>
+                            <?php endfor; ?>
+                        </div>
+                    <?php endfor; ?>
+                </div>
+            </div>
+        <?php endif; ?>
 

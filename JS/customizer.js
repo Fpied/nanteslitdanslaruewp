@@ -12,21 +12,18 @@ wp.customize.bind('ready', ()=> {
         label.append(valeur);
 
         const afficher = () => {
-            const min = Number(range.min);
-            const max = Number(range.max);
-            const actuel = Number(range.value);
-            const reglage = range.dataset.customizeSettingLink || '';
-            if (reglage.endsWith('_rotation')){
-                valeur.textContent = ' (' + actuel + '°)';
-                return;
-            }
-            if (reglage.endsWith('_px')){
-                valeur.textContent = ' (' + actuel + 'px)';
-                return;
-            }
-            const pourcentage = Math.round((actuel - min) / (max - min) * 100);
-            valeur.textContent = ' (' + pourcentage + '%)';
-        };
+        const actuel = Number(range.value);
+        const reglage = range.dataset.customizeSettingLink || '';
+        if (reglage.endsWith('_rotation')){
+            valeur.textContent = ' (' + actuel + '°)';
+            return;
+        }
+        if (reglage.endsWith('_px')){
+            valeur.textContent = ' (' + actuel + 'px)';
+            return;
+        }
+        valeur.textContent = ' (' + actuel + '%)';
+    };
 
         afficher();
         range.addEventListener('input', afficher);

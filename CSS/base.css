@@ -15,6 +15,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    line-height: var(--interligne, 1.5);
 }
 .main__page{
     flex: 1;
@@ -35,7 +36,7 @@ p, li{
 }
 
 h1{
-    font-size: clamp(calc(var(--taille-h1-mobile) * 1px), 5vw, calc(var(--taille-h1) * 1px));
+    font-size: clamp(calc(1.5rem * var(--font-size-h1)), 5vw, calc(3rem * var(--font-size-h1)));
 }
 
 h2{

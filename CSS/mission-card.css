@@ -1,0 +1,90 @@
+/* La carte : bordure, fond blanc, et on supprime l'espace
+   que l'Empilement met entre ses deux étages */
+.mission-card {
+    gap: 0;
+    border: 1px solid #e3e3e3;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Étage du haut : la marge intérieure qui manquait */
+.mission-card__header {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    align-items: center;
+}
+
+.mission-card__title {
+    margin: 0 0 0.5rem;
+    color: #0b4f5c;
+    font-size: 1.5rem;
+}
+
+.mission-card__meta {
+    margin: 0;
+    color: #8a8a8a;
+}
+
+.mission-card__meta strong {
+    color: #6b7b85;
+}
+
+/* Étage du bas : on annule la marge du bloc Colonnes
+   (l'espace vide sous la ligne) */
+.mission-card__footer {
+    margin: 0;
+    background: #f7f7f7;
+}
+
+.mission-card__footer .wp-block-columns {
+    margin: 0;
+    gap: 0;
+    align-items: stretch;
+    max-width: none;
+}
+
+/* Chaque colonne centre son contenu verticalement */
+.mission-card__footer .wp-block-column {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+}
+
+/* La colonne du bouton n'a pas de marge : le bouton touche les bords */
+.mission-card__footer .wp-block-column:last-child {
+    padding: 0;
+}
+
+.mission-card__info {
+    margin: 0;
+    color: #e05ea4;
+    font-weight: 700;
+}
+
+/* Le bouton remplit toute sa colonne */
+.mission-card__action,
+.mission-card__action .wp-block-button,
+.mission-card__action .wp-block-button__link {
+    width: 100%;
+    height: 100%;
+}
+
+.mission-card__action .wp-block-button__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    background: #e05ea4;
+    text-transform: uppercase;
+}
+
+@media (min-width: 782px) {
+    .mission-card__footer .wp-block-columns > .wp-block-column:not(:last-child) {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .mission-card__footer .wp-block-columns > .wp-block-column:last-child {
+        flex: 1 1 auto;
+    }
+}

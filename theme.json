@@ -19,12 +19,25 @@
                     "slug": "filtrerougenldlr",
                     "colors": [ "#FB725F", "#FFFFFF" ]
                 }
+
             ]
         },
         "layout": {
             "contentSize": "800px",
             "wideSize": "1200px"
+        },
+        "spacing": {
+            "padding": true
+        },
+        "typography": {
+            "lineHeight": true
+        },
+        "border": {
+            "color": true,
+            "style": true,
+            "width": true
         }
+        
     }
 }
 

@@ -50,29 +50,36 @@
 }
 
 .menu-actions .wp-block-image:hover{
-    transform: scale(1.50);
+    transform: scale(1.1);
 }
 .menu-actions {
     --wp--style--gallery-gap-default: 6rem;
 }
 .menu-actions.rejoignez-nous{
-    max-width: 1200px;
-
-    --wp--style--gallery-gap-default: 1rem;
     --ronds-actions: var(--couleur-rejoignez);
+    margin-inline: auto;
 }
+
 
 .fond-actions.rejoignez-nous {
     --ronds-actions: var(--couleur-rejoignez);
     background-color: var(--fond-rejoignez, var(--couleur-rejoignez)) !important;
 }
 
-.wp-block-gallery.has-nested-images.menu-actions.rejoignez-nous figure.wp-block-image {
-    border-radius: 50%;
-}
+
 
 .menu-actions.rejoignez-nous .wp-block-image:hover {
     transform: scale(1.1);
+}
+
+.wp-block-gallery.has-nested-images.menu-actions.rejoignez-nous {
+    justify-content: center;
+}
+
+.wp-block-gallery.has-nested-images.menu-actions.rejoignez-nous figure.wp-block-image {
+    border-radius: 50%;
+    max-width: 202px;
+    flex-grow: 0;
 }
 
 @media (max-width: 600px){

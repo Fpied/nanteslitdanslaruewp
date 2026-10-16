@@ -39,7 +39,7 @@
 <div class="barre__bas">
     <?php $pageAgenda = get_page_by_path('agenda'); ?>
     <?php if (get_theme_mod('nlr_agenda_actif', true) && $pageAgenda && get_post_status($pageAgenda) === 'publish') : ?>
-        <a href="<?php echo get_permalink($pageAgenda); ?>"><img src="<?php echo get_template_directory_uri(); ?>/asset/ordre-du-jour.png" alt="voir l'agenda"></a>
+        <a href="<?php echo get_permalink($pageAgenda); ?>"><img src="<?php echo get_template_directory_uri(); ?>/asset/icone_agenda.svg" alt="voir l'agenda"></a>
     <?php endif; ?>
     <a href="#haut" class="chevron__haut"><img src="<?php echo get_template_directory_uri(); ?>/asset/fleche-vers-le-haut.png" alt="flèche vers le haut"></a>
 </div>

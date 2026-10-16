@@ -1,0 +1,33 @@
+.chantier {
+    overflow: hidden;
+    padding-block: 0.5rem;
+    background: repeating-linear-gradient(45deg, #FFFC61 0 20px, #FFFC61 20px 40px);
+}
+
+.chantier__defile {
+    display: flex;
+    width: max-content;
+    animation: chantier-defile 20s linear infinite;
+}
+
+.chantier__groupe {
+    display: flex;
+}
+
+.chantier__groupe span {
+    margin-inline: 1.5rem;
+    padding: 0.25rem 1rem;
+    background: #FFFC61;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@keyframes chantier-defile {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chantier__defile { animation: none; }
+}

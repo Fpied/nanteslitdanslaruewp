@@ -24,17 +24,7 @@
     overflow-wrap:anywhere;
 }
 
-.alignfull{
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-}
 
-.alignwide{
-    width: min(75rem, calc(100vw - 2rem));
-    margin-left: 50%;
-    transform: translateX(-50%);
-
-}
 
 .wp-block-embed{
     max-width: 560px;
@@ -45,6 +35,18 @@
 
 .contenu__page iframe{
     max-width: 100%;
+}
+.contenu__page > .alignfull,
+.main__home > .alignfull{
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+}
+
+.contenu__page > .alignwide,
+.main__home > .alignwide{
+    width: min(75rem, calc(100vw - 2rem));
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 @media (max-width: 600px){

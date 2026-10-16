@@ -11,7 +11,7 @@
     -webkit-box-decoration-break: clone;
     padding: 0.1em 0.4em;
     line-height: 1.6;
-    font-size: max(calc(var(--taille-h1-mobile) * 1px), calc(var(--taille-h1) / 1920 * 100cqw));
+    font-size: max(calc(1.5rem * var(--font-size-h1)), calc(48 / 1920 * 100cqw * var(--font-size-h1)));
     
 
 

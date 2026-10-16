@@ -37,6 +37,7 @@
 
 .nav__header__ul{
     padding-top: 8rem;
+    padding-inline: 2rem;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -59,27 +60,36 @@
 
 }
 .label__hamburger{
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--black);
+    mask: url("../asset/iconeburger.svg") center / contain no-repeat;
     margin-left: 1rem;
     order: -1;
+    cursor: pointer;
 }
-.label__hamburger::before{
-    content: "☰";
-    font-size: 3rem;
-}
-.menu_hamburger_checkbox:checked+.label__hamburger::before{
-    content: "X";
-    font-size: 2rem;
-    font-weight: bold;
-}
+
 .label__close{
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0;
+    background-color: var(--black);
+    mask: url("../asset/iconecroix.svg") center / contain no-repeat;
     position: absolute;
     top: 4rem;
     right: 1rem;
     cursor: pointer;
-    font-size: 2rem;
 }
 .nav__header__ul a::after{
-    content: ">";
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    align-self: center;
+    background-color: var(--black);
+    mask: url("../asset/icone_fleches_menu2.svg") center / contain no-repeat; 
 }
 .nav__header__ul a{
     display: flex;
@@ -102,6 +112,11 @@
 #haut.header{
     margin: 0;
 }
+@media (max-width: 1119px){
+    .menu-benevole a{
+        margin-left: 0.5rem;
+    }
+}
 
 @media(min-width: 1120px) {
     .logo__header{
@@ -123,6 +138,7 @@
         justify-content: flex-end;
         gap: 0.25rem clamp(0.5rem, 1.2vw, 1.7rem);
         align-items: center;
+        padding-left: 2rem;
     }
     .label__hamburger{
         display: none;

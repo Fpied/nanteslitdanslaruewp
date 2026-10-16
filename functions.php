@@ -447,26 +447,15 @@ function nlr_customizer($wp_customize){
     ]);
 
     $wp_customize->add_section('nlr_section_fontsize', ['title' => 'Tailles de police',]);
-    $wp_customize->add_setting('nlr_fontsize_h1_px', [
-        'default' => 48,
+    $wp_customize->add_setting('nlr_fontsize_h1', [
+        'default' => 100,
         'sanitize_callback' => 'absint',
     ]);
-    $wp_customize->add_control('nlr_fontsize_h1_px', [
-        'label' => "Taille des titres h1 (écran de 1920 px) ",
+    $wp_customize->add_control('nlr_fontsize_h1', [
+        'label' => "Taille des titres h1",
         'section' => 'nlr_section_fontsize',
         'type' => 'range',
-        'input_attrs' => ['min' => 24, 'max' => 96, 'step' => 1],
-    ]);
-
-    $wp_customize->add_setting('nlr_fontsize_h1_mobile_px', [
-        'default' => 24,
-        'sanitize_callback' => 'absint',
-    ]);
-    $wp_customize->add_control('nlr_fontsize_h1_mobile_px', [
-        'label' => "Taille des titres h1 sur téléphone ",
-        'section' => 'nlr_section_fontsize',
-        'type' => 'range',
-        'input_attrs' => ['min' => 14, 'max' => 64, 'step' => 1],
+        'input_attrs' => ['min' => 50, 'max' => 200, 'step' => 1],
     ]);
         $wp_customize->add_setting('nlr_fontsize_h2', [
         'default' => 100,
@@ -521,6 +510,20 @@ function nlr_customizer($wp_customize){
         'type' => 'range',
         'input_attrs' => ['min' => 50, 'max' => 120, 'step' => 1],
     ]);
+
+    $wp_customize->add_setting('nlr_interligne',[
+        'default' => 150,
+        'sanitize_callback' => 'absint',
+
+    ]);
+
+    $wp_customize->add_control('nlr_interligne', [
+        'label' => "Interligne du texte",
+        'section' => 'nlr_section_fontsize',
+        'type' => 'range',
+        'input_attrs' => ['min' => 100, 'max' => 250, 'step'=> 5], 
+    ]);
+
 
     $wp_customize->add_setting('nlr_logo_size', [
     'default' => 100,
@@ -724,6 +727,16 @@ function nlr_customizer($wp_customize){
             'type' => 'text',
         ]);
 
+        $wp_customize->add_setting($id . '_chantier', [
+            'default' => false,
+            'sanitize_callback' => 'rest_sanitize_boolean',
+        ]);
+        $wp_customize->add_control($id . '_chantier', [
+            'label' => "Afficher le bandeau << page en chantier >>",
+            'section' => $id,
+            'type' => 'checkbox',
+        ]);
+
         
        
     }
@@ -760,8 +773,7 @@ function nlr_couleurs(){
     $bandeau = get_theme_mod('nlr_couleur_bandeau', '#FFFC78');
     $footer  = get_theme_mod('nlr_couleur_footer', '#e63946');
     $opacite = get_theme_mod('nlr_opacite_footer', 100);
-    $h1      = get_theme_mod('nlr_fontsize_h1_px', 48);
-    $h1Mobile = get_theme_mod('nlr_fontsize_h1_mobile_px', 24);
+    $h1 = get_theme_mod('nlr_fontsize_h1', 100);
     $h2      = get_theme_mod('nlr_fontsize_h2', 100);
     $h3      = get_theme_mod('nlr_fontsize_h3', 100);
     $p       = get_theme_mod('nlr_fontsize_p', 100);
@@ -775,14 +787,14 @@ function nlr_couleurs(){
     $rejoignez = get_theme_mod('nlr_couleur_rejoignez', '#FF6900');
     $fondRejoignez = get_theme_mod('nlr_fond_rejoignez', '#FF6900');
     $colorTable = get_theme_mod('couleur_tableau_missions', '#7f3300');
+    $interligne = get_theme_mod('nlr_interligne', 150);
     ?>
     <style>
         :root {
             --bandeau: <?php echo esc_attr($bandeau); ?>;
             --footer-fond: <?php echo esc_attr($footer); ?>;
             --footer-opacite: <?php echo absint($opacite); ?>%;
-            --taille-h1: <?php echo absint($h1); ?>;
-            --taille-h1-mobile: <?php echo absint($h1Mobile); ?>;
+            --font-size-h1: <?php echo absint($h1) / 100; ?>;
             --font-size-h2: <?php echo absint($h2) / 100; ?>;
             --font-size-h3: <?php echo absint($h3) / 100; ?>;
             --font-size-p: <?php echo absint($p) / 100; ?>;
@@ -796,6 +808,7 @@ function nlr_couleurs(){
             --fond-rejoignez: <?php echo esc_attr($fondRejoignez); ?>;
             --font-size-menu: <?php echo absint($menu) / 100; ?>;
             --couleur-tableau-missions: <?php echo esc_attr($colorTable); ?>;
+            --interligne: <?php echo absint($interligne) / 100; ?>;
         }
     </style>
     <?php
